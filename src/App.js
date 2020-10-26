@@ -1,4 +1,4 @@
-import './App.css';
+import './App.css'
 
 // Screens
 import Login from '../src/components/Login/Login'
@@ -14,7 +14,7 @@ function App() {
         <Login />
       </ThemeProvider>
     </div>
-  );
+  )
 }
 
 export default App;

@@ -7,12 +7,11 @@ import {
     Grid,
     TextField,
     Typography,
-    InputAdornment,
-    Divider
+    InputAdornment
 } from '@material-ui/core'
 
 // Styles
-import { useTheme, withStyles } from '@material-ui/core/styles'
+import { withStyles } from '@material-ui/core/styles'
 import loginStyles from './loginStyles'
 
 //Icons
@@ -21,14 +20,9 @@ import LockIcon from '@material-ui/icons/Lock'
 import googleIcon from '../../assets/google.svg'
 
 
-
 const Login = (props) => {
 
-    //is it necessary here?
-    const theme = useTheme()
-
     const classes = props.classes
-    // const { classes } = props
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -44,88 +38,93 @@ const Login = (props) => {
     return (
         <Grid
             container
-            direction='column'
-            // justify='center'
+            justify='center'
             alignItems='center'
-            spacing={6}
-            // style={{ marginTop: '3em' }}
+            spacing={3}
             className={classes.mainContainer}
         >
-            <Grid item>
-                <Typography variant="h3">
-                    LOGIN
-                </Typography>
-            </Grid>
-            <Grid item>
-            <form>
-                <Grid
-                    container
-                    direction='column'
-                    spacing={3}
-                >
-                    <Grid item>
-                        <TextField
-                            placeholder='Username'
-                            id='username'
-                            type='text'
-                            required
-                            value={username}
-                            onChange={event => setUsername(event.target.value)}
-                            InputProps={{
-                                startAdornment: (
-                                    <InputAdornment position="start">
-                                        <PersonIcon />
-                                    </InputAdornment>
-                                )
-                            }}
-                        />
-                    </Grid>
-                    <Grid item>
-                        <TextField
-                            placeholder='Password'
-                            id='password'
-                            type='password'
-                            required
-                            fullWidth
-                            value={password}
-                            onChange={event => setPassword(event.target.value)}
-                            InputProps={{
-                                startAdornment: (
-                                    <InputAdornment position="start">
-                                        <LockIcon />
-                                    </InputAdornment>
-                                )
-                            }}
-                        />
-                    </Grid>
-                    <Grid item>
-                        <Button
-                            disabled={
-                                username.length === 0 ||
-                                password.length === 0
-                            }
-                            fullWidth={true}
-                            variant='contained'
-                            color='secondary'
-                            type='submit'
-                        >
-                            LOGIN
-                </Button>
-                    </Grid>
+
+            <Grid item container xs={12} md={3} spacing={3} justify='center'>
+                <Grid item xs={10}>
+                    <Typography variant="h3">
+                        Login
+                    </Typography>
                 </Grid>
-            </form>
+                <Grid item xs={10}>
+                    <form>
+                        <Grid
+                            container
+                            spacing={3}
+                        >
+                            <Grid item xs={12}>
+                                <TextField
+                                    placeholder='Username'
+                                    id='username'
+                                    type='text'
+                                    required
+                                    fullWidth={true}
+                                    value={username}
+                                    onChange={event => setUsername(event.target.value)}
+                                    InputProps={{
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <PersonIcon />
+                                            </InputAdornment>
+                                        )
+                                    }}
+                                    inputProps={{ className: classes.input }}
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <TextField
+                                    placeholder='Password'
+                                    id='password'
+                                    type='password'
+                                    required
+                                    fullWidth={true}
+                                    value={password}
+                                    onChange={event => setPassword(event.target.value)}
+                                    InputProps={{
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <LockIcon />
+                                            </InputAdornment>
+                                        )
+                                    }}
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <Button
+                                    disabled={
+                                        username.length === 0 ||
+                                        password.length === 0
+                                    }
+                                    fullWidth={true}
+                                    variant='contained'
+                                    color='primary'
+                                    type='submit'
+                                >
+                                    LOGIN
+                            </Button>
+                            </Grid>
+                        </Grid>
+                    </form>
+                </Grid>
+                <Grid item container justify='center' xs={10}>
+                    <span className={classes.hrLine}>or</span>
+                </Grid>
+                <Grid item xs={10}>
+                    <Button
+                        variant='outlined'
+                        color='primary'
+                        fullWidth={true}
+                    >
+                        {googleBtnContents}
+                    </Button>
+                </Grid>
             </Grid>
-            <Divider variant="middle"/>
-            <Grid item>
-                <Button
-                    variant='outlined'
-                    color='primary'
-                    fullWidth={true}
-                >
-                    {googleBtnContents}
-                </Button>
-            </Grid>
-            <Grid
+
+            <Grid item
                 container
                 direction='column'
                 justify='center'

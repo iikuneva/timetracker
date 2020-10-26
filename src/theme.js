@@ -1,44 +1,30 @@
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createMuiTheme } from '@material-ui/core/styles'
 
-
-// const lightGrey = '#868686';
-// const darkGreen = '#15C797';
-
-const lightGreen = '#6DAD29';
-const darkGrey = '#272F3B';
-
+const blue = '#1A91DA'
+const lightBlue = '#b3e5fc'
 
 export default createMuiTheme({
   palette: {
     primary: {
-      main: darkGrey
+      main: blue
     },
-    secondary: {
-      main: lightGreen
+    action: {
+      disabledBackground: lightBlue,
+      disabled: 'white'
     }
+
   },
   typography: {
     fontSize: 12,
     h2: {
       fontWeight: 700,
       fontSize: '2.5rem',
-      color: darkGrey,
       lineHeight: 1.5
     },
     h3: {
       fontWeight: 500,
       fontSize: '1.5rem',
-      color: darkGrey,
       lineHeight: 1.5
-    }
-  },
-
-  overrides: {
-    MuiInput: {
-      root: {
-        color: darkGrey,
-        fontWeight: 300
-      }
     }
   }
 
