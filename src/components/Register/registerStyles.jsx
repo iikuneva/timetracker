@@ -1,5 +1,5 @@
 
-const loginStyles = (theme) => {
+const registerStyles = (theme) => {
     return {
         mainContainer: {
             marginTop: '5em'
@@ -43,5 +43,5 @@ const loginStyles = (theme) => {
     }
 }
 
-export default loginStyles
+export default registerStyles
 

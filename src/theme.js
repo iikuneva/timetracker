@@ -26,6 +26,14 @@ export default createMuiTheme({
       fontSize: '1.5rem',
       lineHeight: 1.5
     }
-  }
+  },
+  overrides: {
+    MuiTab: {
+      wrapper: {
+        flexDirection:'row',
+        alignItems: 'center'
+      },
+    },
+  },
 
 })

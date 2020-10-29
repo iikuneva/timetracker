@@ -12,26 +12,29 @@ import {
 
 // Styles
 import { withStyles } from '@material-ui/core/styles'
-import loginStyles from './loginStyles'
+import registerStyles from './registerStyles'
 
 //Icons
 import PersonIcon from '@material-ui/icons/Person'
 import LockIcon from '@material-ui/icons/Lock'
 import googleIcon from '../../assets/google.svg'
+import EmailIcon from '@material-ui/icons/Email'
 
 
-const Login = (props) => {
+const Register = (props) => {
 
     const classes = props.classes
 
     const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [repeat, setRepeat] = useState('')
 
 
     const googleBtnContents = (
         <>
             <img src={googleIcon} alt="google icon" className={classes.icon} />
-          Login with Google
+          Register with Google
         </>
     );
 
@@ -47,7 +50,7 @@ const Login = (props) => {
             <Grid item container xs={12} md={3} spacing={3} justify='center'>
                 <Grid item xs={10}>
                     <Typography variant="h3">
-                        Login
+                        Register
                     </Typography>
                 </Grid>
                 <Grid item xs={10}>
@@ -77,6 +80,25 @@ const Login = (props) => {
                             </Grid>
                             <Grid item xs={12}>
                                 <TextField
+                                    placeholder='Email'
+                                    id='email'
+                                    type='email'
+                                    required
+                                    fullWidth={true}
+                                    value={email}
+                                    onChange={event => setEmail(event.target.value)}
+                                    InputProps={{
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <EmailIcon />
+                                            </InputAdornment>
+                                        )
+                                    }}
+                                    inputProps={{ className: classes.input }}
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <TextField
                                     placeholder='Password'
                                     id='password'
                                     type='password'
@@ -94,17 +116,37 @@ const Login = (props) => {
                                 />
                             </Grid>
                             <Grid item xs={12}>
+                                <TextField
+                                    placeholder='Repeat password'
+                                    id='repeat'
+                                    type='password'
+                                    required
+                                    fullWidth={true}
+                                    value={repeat}
+                                    onChange={event => setRepeat(event.target.value)}
+                                    InputProps={{
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <LockIcon />
+                                            </InputAdornment>
+                                        )
+                                    }}
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
                                 <Button
                                     disabled={
                                         username.length === 0 ||
-                                        password.length === 0
+                                        email.length === 0 ||
+                                        password.length === 0 ||
+                                        repeat.length === 0
                                     }
                                     fullWidth={true}
                                     variant='contained'
                                     color='primary'
                                     type='submit'
                                 >
-                                    LOGIN
+                                    REGISTER
                             </Button>
                             </Grid>
                         </Grid>
@@ -123,20 +165,14 @@ const Login = (props) => {
                     </Button>
                 </Grid>
             </Grid>
-
             <Grid item
                 container
                 direction='column'
                 justify='center'
             >
                 <Grid item>
-                    <Link href='/register' className={classes.link} >
-                        Don't have an account yet?
-                    </Link>
-                </Grid>
-                <Grid item>
-                    <Link href="#" className={classes.link}>
-                        Forgot your password?
+                    <Link href='/login' className={classes.link}>
+                        Already have an account?
                     </Link>
                 </Grid>
             </Grid>
@@ -144,4 +180,4 @@ const Login = (props) => {
     )
 }
 
-export default withStyles(loginStyles)(Login)
+export default withStyles(registerStyles)(Register)
