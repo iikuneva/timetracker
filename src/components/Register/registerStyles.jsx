@@ -36,7 +36,7 @@ const registerStyles = (theme) => {
             }
         },
         input: {
-            "&:-webkit-autofill": {
+            '&:-webkit-autofill': {
                 WebkitBoxShadow: "0 0 0 1000px white inset"
               }
         }

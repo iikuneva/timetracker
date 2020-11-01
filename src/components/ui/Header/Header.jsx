@@ -28,7 +28,7 @@ const Header = (props) => {
       }
 
     return (
-        <AppBar position="fixed" className={classes.appbar}>
+        <AppBar position="sticky">
             <Toolbar>
                 <Button
                     component={Link}

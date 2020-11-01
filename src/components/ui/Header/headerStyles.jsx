@@ -6,7 +6,7 @@ const headerStyles = (theme) => {
             color: 'white',
             fontFamily: 'Carter One, cursive',
             fontSize: '1.2em',
-            "&:hover": {
+            '&:hover': {
               backgroundColor: 'transparent'
             }
         },

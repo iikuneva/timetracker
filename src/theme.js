@@ -2,6 +2,8 @@ import { createMuiTheme } from '@material-ui/core/styles'
 
 const blue = '#1A91DA'
 const lightBlue = '#b3e5fc'
+const lightGrey = '#EDF0F2'
+
 
 export default createMuiTheme({
   palette: {
@@ -10,7 +12,8 @@ export default createMuiTheme({
     },
     action: {
       disabledBackground: lightBlue,
-      disabled: 'white'
+      disabled: 'white',
+      selected: blue
     }
 
   },
@@ -30,10 +33,21 @@ export default createMuiTheme({
   overrides: {
     MuiTab: {
       wrapper: {
-        flexDirection:'row',
+        flexDirection: 'row',
         alignItems: 'center'
       },
     },
+    // MuiAutoComplete: {
+      // "root": {
+      //   "&$selected": {
+      //     "&[data-focus=\"true\"]": {
+      //       "backgroundColor": "transparent"
+      //     }
+      //   }
+      // }
+
+    // },
+
   },
 
 })

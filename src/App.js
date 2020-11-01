@@ -5,7 +5,10 @@ import { BrowserRouter, Switch, Route} from 'react-router-dom'
 // Screens
 import Login from '../src/components/Login/Login'
 import Register from '../src/components/Register/Register'
-import Header from '../src/components/ui/Header/Header'
+import UserHome from '../src/components/UserHome/UserHome'
+// import Header from '../src/components/ui/Header/Header'
+// import SubHeader from './components/ui/SubHeader/SubHeader'
+
 
 // Theme
 import { ThemeProvider } from '@material-ui/core/styles'
@@ -16,13 +19,12 @@ function App() {
     <div className="App">
       <ThemeProvider theme={customTheme}>
         <BrowserRouter>
-        <Header />
         <Switch>
-          {/* <Route
+          <Route
             exact
             path="/user"
-            component={User}
-          /> */}
+            component={UserHome}
+          />
           <Route
             exact
             path="/login"
