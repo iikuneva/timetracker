@@ -14,7 +14,11 @@ export default createMuiTheme({
       disabledBackground: lightBlue,
       disabled: 'white',
       selected: blue
-    }
+    },
+    // background: {
+    //   paper: '#EEEEEE',
+    //   default: 'white'
+    // }
 
   },
   typography: {

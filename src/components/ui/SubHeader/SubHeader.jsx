@@ -4,7 +4,8 @@ import {
     InputLabel,
     MenuItem,
     FormControl,
-    Select
+    Select,
+    Grid
 } from '@material-ui/core'
 
 // Styles
@@ -22,9 +23,12 @@ const SubHeader = (props) => {
     const [projectName, setProjectName] = useState('')
 
     return (
-        <div className={classes.mainContainer}>
-            <div className={classes.selectContainer}>
+        <>
+            <Grid item xs={6} md={2} container justify='center' alignItems='flex-end'>
+                <Grid item>
                 <CompanyIcon className={classes.icon} />
+                </Grid>
+                <Grid item>
                 <FormControl className={classes.formControl}>
                     <InputLabel id="companyName-label">Company Name</InputLabel>
                     <Select
@@ -32,7 +36,6 @@ const SubHeader = (props) => {
                         id="companyName"
                         value={companyName}
                         onChange={(e) => setCompanyName(e.target.value)}
-
                     >
                         <MenuItem value="">
                             <em>None</em>
@@ -43,9 +46,13 @@ const SubHeader = (props) => {
                         <MenuItem className={classes.menuItem} value='musalasoft'>Musala Soft</MenuItem>
                     </Select>
                 </FormControl>
-            </div>
-            <div className={classes.selectContainer}>
+                </Grid>
+            </Grid>
+            <Grid item xs={6} md={2} container justify='center' alignItems='flex-end'>
+                <Grid item>
                 <ProjectIcon className={classes.icon} />
+                </Grid>
+                <Grid item>
                 <FormControl className={classes.formControl}>
                     <InputLabel id="companyName-label">Project Name</InputLabel>
                     <Select
@@ -62,8 +69,9 @@ const SubHeader = (props) => {
                         <MenuItem className={classes.menuItem} value='solarcity'>SolarCity</MenuItem>
                     </Select>
                 </FormControl>
-            </div>
-        </div>
+                </Grid>
+            </Grid>
+        </>
     )
 
 }

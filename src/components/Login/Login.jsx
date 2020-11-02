@@ -46,7 +46,7 @@ const Login = (props) => {
 
             <Grid item container xs={12} md={3} spacing={3} justify='center'>
                 <Grid item xs={10}>
-                    <Typography variant="h3">
+                    <Typography variant='h3'>
                         Login
                     </Typography>
                 </Grid>

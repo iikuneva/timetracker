@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 // Material Components
 import {
+  Grid,
   Button,
   Card,
   CardHeader,
@@ -27,85 +28,81 @@ import TimerIcon from '@material-ui/icons/Timer'
 
 const CardTask = (props) => {
 
-  const { classes, task } = props
+  const { classes, title, assignee, dueDate, tracked, description } = props
+  // const onTrack = (value) => {
+  // }
 
-  const onTrack = (task) => {
-  }
-
-  const onTrackEight = (task) => {
-  }
+  // const onTrackEight = (value) => {
+  // }
 
   const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+    setExpanded(!expanded)
+  }
 
-  return (
-    <Card className={classes.card}>
-      <CardHeader
-        // title={task.title}
-        title='Implement Home page'
-        className={classes.cardHeader}
-      />
-      <CardContent>
-        <Typography>
-          {/* Assignee: {task.assignee} */}
-          Assignee: Irina Lazarova, Viktor Velchev
-        </Typography>
-        <Typography className={classes.dueDate}>
-          {/* Due Date: {task.dueDate} */}
-         Due Date: 23.11.2020
-        </Typography>
-        <Typography className={classes.tracked}>
-          {/* Tracked: <strong>{task.tracked}</strong> */}
-          <TimerIcon className={classes.icon}/>Tracked: <strong>16</strong>
-        </Typography>
-      </CardContent>
-      <Divider variant='middle'/>
-      <CardActions disableSpacing>
-        <Button
-          size='small'
-          color='primary'
-          onClick={() => {
-            onTrack(task)
-          }}
-        >
-          Track
-          </Button>
-        <Button
-          size='small'
-          color='primary'
-          onClick={() => {
-            onTrackEight(task)
-          }}
-        >
-          Track 8 hours
-          </Button>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </IconButton>
-      </CardActions>
-
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography variant='h6'>Description</Typography>
-          <Typography  variant='body2'>
-            {/* {task.description} */}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  return ( 
+      <Card className={classes.card}>
+        <CardHeader
+          title={title}
+          className={classes.cardHeader}
+        />
+        <CardContent className={classes.cardContent}>
+          <Typography>
+            Assignee: {assignee}
+            {/* Assignee: Irina Lazarova, Viktor Velchev */}
           </Typography>
-          {/* </Typography> */}
+          <Typography className={classes.dueDate}>
+            Due Date: {dueDate}
+            {/* Due Date: 23.11.2020 */}
+          </Typography>
+          <Typography className={classes.tracked}>
+            <TimerIcon className={classes.icon} />Tracked: {tracked}
+          </Typography>
         </CardContent>
-      </Collapse>
+        <Divider variant='middle' />
+        <CardActions disableSpacing>
+          <Button
+            size='small'
+            color='primary'
+            onClick={() => {
+              // onTrack(value)
+            }}
+          >
+            Track
+          </Button>
+          <Button
+            size='small'
+            color='primary'
+            onClick={() => {
+              // onTrackEight(value)
+            }}
+          >
+            Track 8 hours
+          </Button>
+          <IconButton
+            className={clsx(classes.expand, {
+              [classes.expandOpen]: expanded,
+            })}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
+            <ExpandMoreIcon />
+          </IconButton>
+        </CardActions>
 
-    </Card>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+            <Typography variant='h6'>Description</Typography>
+            <Typography variant='body2'>
+              {description}
+              {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. */}
+            </Typography>
+          </CardContent>
+        </Collapse>
+
+      </Card>
   )
 }
 

@@ -2,9 +2,12 @@ const cardTaskStyles = (theme) => {
   return {
     card: {
       maxWidth: 345,
-      // position: "absolute",
       boxShadow: theme.shadows[10],
-      // borderRadius: 15
+      borderRadius: 10,
+      // backgroundColor: 'white'
+    },
+    cardContent: {
+      height: '70px'
     },
     cardHeader: {
       backgroundColor: '#b3e5fc',
@@ -19,7 +22,6 @@ const cardTaskStyles = (theme) => {
     },
     icon: {
       marginRight: '0.2em',
-      // color: theme.palette.primary.main,
       color: 'grey',
       verticalIlign: 'middle',
       display: 'inline'

@@ -16,23 +16,23 @@ import customTheme from './theme'
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <ThemeProvider theme={customTheme}>
         <BrowserRouter>
         <Switch>
           <Route
             exact
-            path="/user"
+            path='/user'
             component={UserHome}
           />
           <Route
             exact
-            path="/login"
+            path='/login'
             component={Login}
           />
              <Route
             exact
-            path="/register"
+            path='/register'
             component={Register}
           />
           </Switch>
@@ -42,4 +42,4 @@ function App() {
   )
 }
 
-export default App;
+export default App
