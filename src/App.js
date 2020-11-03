@@ -6,9 +6,6 @@ import { BrowserRouter, Switch, Route} from 'react-router-dom'
 import Login from '../src/components/Login/Login'
 import Register from '../src/components/Register/Register'
 import UserHome from '../src/components/UserHome/UserHome'
-// import Header from '../src/components/ui/Header/Header'
-// import SubHeader from './components/ui/SubHeader/SubHeader'
-
 
 // Theme
 import { ThemeProvider } from '@material-ui/core/styles'

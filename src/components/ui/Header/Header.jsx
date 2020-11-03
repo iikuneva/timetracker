@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+// Material Components
 import {
     AppBar,
     Toolbar,
@@ -13,7 +14,7 @@ import {
 import { withStyles } from '@material-ui/core/styles'
 import headerStyles from './headerStyles'
 
-//Icons
+// Icons
 import PersonAccountIcon from '@material-ui/icons/AccountCircle'
 
 

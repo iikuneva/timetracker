@@ -11,7 +11,8 @@ const headerStyles = (theme) => {
             }
         },
         tabContainer: {
-            marginLeft: 'auto'
+            marginLeft: 'auto',
+            paddingRight: 0
           },
         icon: {
             marginRight: '0.5em',

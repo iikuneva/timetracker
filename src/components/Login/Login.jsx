@@ -14,7 +14,7 @@ import {
 import { withStyles } from '@material-ui/core/styles'
 import loginStyles from './loginStyles'
 
-//Icons
+// Icons
 import PersonIcon from '@material-ui/icons/Person'
 import LockIcon from '@material-ui/icons/Lock'
 import googleIcon from '../../assets/google.svg'

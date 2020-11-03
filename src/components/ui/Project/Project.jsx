@@ -1,57 +1,71 @@
 import React from 'react'
 
+// Library react-multi-carousel https://www.npmjs.com/package/react-multi-carousel
+import Carousel from 'react-multi-carousel'
+import 'react-multi-carousel/lib/styles.css'
+
 // Material Components
 import { Typography, Grid } from '@material-ui/core'
 
-import tasksData from '../../../test/mock/mockCardTaskData.js'
+// Custom component
 import CardTask from '../CardTask/CardTask'
 
 // Styles
 import { withStyles } from '@material-ui/core/styles'
 import projectStyles from './projectStyles'
 
+// Responsive object from react-multi-carousel
+const responsive = {
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 3,
+        slidesToSlide: 3 // optional, default to 1.
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2,
+        slidesToSlide: 2 // optional, default to 1.
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1,
+        slidesToSlide: 1 // optional, default to 1.
+    }
+}
 
 const Project = (props) => {
 
-    // const { project } = props
-    const { classes } = props
+    const { classes, name, tasks } = props
 
     return (
         <Grid
             item
             container
-            spacing={3}
-            direction='row'
             justify="center"
-            alignItems="center"
-            xs={12}
-            style={{ backgroundColor: '#EEEEEE' }}
+            className={classes.container}
         >
             <Grid item>
-                <Typography variant='h4' color='primary'>
-                    {/* {project.name} */}
-                    SolarCity
-            </Typography>
+                <Typography variant='h5' color='primary'>
+                    {name.toUpperCase()}
+                </Typography>
             </Grid>
-            <Grid
-                item
-                container
-                spacing={3}
-                xs={12}
-                direction='row'
-                justify='center'
-                alignItems='center'
+            <Carousel
+                className={classes.carouselContainer}
+                responsive={responsive}
+                keyBoardControl={true}
+                transitionDuration={300}
+                removeArrowOnDeviceType={["tablet", "mobile"]}
+                containerClass='react-multi-carousel-list'
+                itemClass=""
             >
                 {
-                    tasksData.map(task => {
+                    tasks.map(task => {
                         return (
-                            <Grid item xs={12} sm={6} md={4} lg={3}>
-                                <CardTask key={task.title} {...task} />
-                            </Grid>
+                            <CardTask key={task.title} {...task} />
                         )
                     })
                 }
-            </Grid>
+            </Carousel>
         </Grid>
     )
 

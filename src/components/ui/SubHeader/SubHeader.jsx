@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+// Material Components
 import {
     InputLabel,
     MenuItem,
@@ -12,8 +13,8 @@ import {
 import { withStyles } from '@material-ui/core/styles'
 import subHeaderStyles from './subHeaderStyles'
 
-//Icon
-import CompanyIcon from '@material-ui/icons/AccountBalance'
+//Icons
+import CompanyIcon from '@material-ui/icons/Business'
 import ProjectIcon from '@material-ui/icons/Assignment'
 
 const SubHeader = (props) => {
@@ -42,7 +43,7 @@ const SubHeader = (props) => {
                         </MenuItem>
                         <MenuItem className={classes.menuItem} value='itido'>ITIDO</MenuItem>
                         <MenuItem className={classes.menuItem} value='strypes'>Strypes</MenuItem>
-                        <MenuItem className={classes.menuItem} value='tumbasolution'>Tumba Solution</MenuItem>
+                        <MenuItem className={classes.menuItem} value='tumbasolutions'>Tumba Solutions</MenuItem>
                         <MenuItem className={classes.menuItem} value='musalasoft'>Musala Soft</MenuItem>
                     </Select>
                 </FormControl>

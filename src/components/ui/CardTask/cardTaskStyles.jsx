@@ -4,17 +4,18 @@ const cardTaskStyles = (theme) => {
       maxWidth: 345,
       boxShadow: theme.shadows[10],
       borderRadius: 10,
-      // backgroundColor: 'white'
+      [theme.breakpoints.down("sm")]: {
+        maxWidth: '90vw',
+        backgroundColor: 'white',
+        boxShadow: theme.shadows[2],
+      }
     },
     cardContent: {
-      height: '70px'
+      minHeight: '70px'
     },
     cardHeader: {
-      backgroundColor: '#b3e5fc',
+      backgroundColor: '#FFBA60',
       color: 'white'
-    },
-    dueDate: {
-      color: 'red'
     },
     tracked: {
       display: 'flex',
@@ -25,10 +26,6 @@ const cardTaskStyles = (theme) => {
       color: 'grey',
       verticalIlign: 'middle',
       display: 'inline'
-    },
-    media: {
-      height: 0,
-      paddingTop: '56.25%', // 16:9
     },
     expand: {
       transform: 'rotate(0deg)',
