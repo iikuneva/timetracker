@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
+import TaskDialog from '../TaskDialog/TaskDialog'
 
 // Material Components
 import {
-  Grid,
   Button,
   Card,
   CardHeader,
@@ -29,12 +29,8 @@ import TimerIcon from '@material-ui/icons/Timer'
 const CardTask = (props) => {
 
   const { classes, title, assignee, dueDate, tracked, description } = props
-  // const onTrack = (value) => {
-  // }
 
-  // const onTrackEight = (value) => {
-  // }
-
+  const [openTaskDialog, setOpenTaskDialog] = useState(false)
   const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
@@ -42,64 +38,68 @@ const CardTask = (props) => {
   }
 
   return (
-    <Card  className={classes.card}>
-      <CardHeader
+    <>
+      <TaskDialog
+        open={openTaskDialog}
+        handleClose={() => setOpenTaskDialog(false)}
         title={title}
-        className={classes.cardHeader}
       />
-      <CardContent className={classes.cardContent}>
-        <Typography>
-          Assignee: {assignee}
-        </Typography>
-        <Typography>
-          Due Date: {dueDate}
-        </Typography>
-        <Typography className={classes.tracked}>
-          <TimerIcon className={classes.icon} />Tracked: {tracked}
-        </Typography>
-      </CardContent>
-      <Divider variant='middle' />
-      <CardActions disableSpacing>
-        <Button
-          size='small'
-          color='primary'
-          onClick={() => {
-            // onTrack(value)
-          }}
-        >
-          Track
-          </Button>
-        <Button
-          size='small'
-          color='primary'
-          onClick={() => {
-            // onTrackEight(value)
-          }}
-        >
-          Track 8 hours
-          </Button>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </IconButton>
-      </CardActions>
-
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography variant='h6'>Description</Typography>
-          <Typography variant='body2'>
-            {description}
+      <Card className={classes.card}>
+        <CardHeader
+          title={title}
+          className={classes.cardHeader}
+        />
+        <CardContent className={classes.cardContent}>
+          <Typography>
+            Assignee: {assignee}
+          </Typography>
+          <Typography>
+            Due Date: {dueDate}
+          </Typography>
+          <Typography className={classes.tracked}>
+            <TimerIcon className={classes.icon} />Tracked: {tracked}
           </Typography>
         </CardContent>
-      </Collapse>
+        <Divider variant='middle' />
+        <CardActions disableSpacing>
+          <Button
+            size='small'
+            color='primary'
+            onClick={() => setOpenTaskDialog(true)}
+          >
+            Track
+          </Button>
+          <Button
+            size='small'
+            color='primary'
+            onClick={() => {
+              
+            }}
+          >
+            Track 8 hours
+          </Button>
+          <IconButton
+            className={clsx(classes.expand, {
+              [classes.expandOpen]: expanded,
+            })}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
+            <ExpandMoreIcon />
+          </IconButton>
+        </CardActions>
 
-    </Card>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+            <Typography variant='h6'>Description</Typography>
+            <Typography variant='body2'>
+              {description}
+            </Typography>
+          </CardContent>
+        </Collapse>
+      </Card>
+    </>
   )
 }
 

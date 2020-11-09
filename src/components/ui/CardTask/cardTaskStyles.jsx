@@ -4,7 +4,7 @@ const cardTaskStyles = (theme) => {
       maxWidth: 345,
       boxShadow: theme.shadows[10],
       borderRadius: 10,
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down('sm')]: {
         maxWidth: '90vw',
         backgroundColor: 'white',
         boxShadow: theme.shadows[2],
