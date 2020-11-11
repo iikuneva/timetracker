@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 // Entities
-import getWorkingHours from '../../../test/utils/getWorkingHours.js'
+import getWorkingHours from '../../js/utils/getWorkingHours.js'
 
 // Material Components
 import {
@@ -46,7 +46,7 @@ const TaskDialog = (props) => {
         if (showEndDate) {
             setHours(getWorkingHours(startDate, endDate))
         }
-    }, [startDate, endDate])
+    }, [endDate])
 
     return (
         <Dialog

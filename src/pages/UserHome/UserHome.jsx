@@ -1,9 +1,9 @@
 import React from 'react'
 
 // Custom components
-import Header from '../ui/Header/Header'
-import SubHeader from '../ui/SubHeader/SubHeader'
-import Project from '../ui/Project/Project'
+import Header from '../../components/Header/Header'
+import SubHeader from '../../components/SubHeader/SubHeader'
+import Project from '../../components/Project/Project'
 
 // Styles
 import { withStyles } from '@material-ui/core/styles'
@@ -15,7 +15,7 @@ import {
 } from '@material-ui/core'
 
 // Mock Data
-import projectsData from '../../test/mock/mockCardTaskData.js'
+import projectsData from '../../js/mock/mockCardTaskData.js'
 
 const UserHome = (props) => {
     const classes = props.classes
