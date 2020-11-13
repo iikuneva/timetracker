@@ -6,6 +6,7 @@ import { BrowserRouter, Switch, Route} from 'react-router-dom'
 import Login from '../src/pages/Login/Login'
 import Register from '../src/pages/Register/Register'
 import UserHome from '../src/pages/UserHome/UserHome'
+import ProjectPM from './pages/ProjectPM/ProjectPM'
 
 // Theme
 import { ThemeProvider } from '@material-ui/core/styles'
@@ -21,6 +22,11 @@ function App() {
             exact
             path='/user'
             component={UserHome}
+          />
+            <Route
+            exact
+            path='/project'
+            component={ProjectPM}
           />
           <Route
             exact
