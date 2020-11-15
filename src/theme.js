@@ -2,7 +2,7 @@ import { createMuiTheme } from '@material-ui/core/styles'
 
 const blue = '#1A91DA'
 const lightBlue = '#b3e5fc'
-const lightGrey = '#EDF0F2'
+// const lightGrey = '#EDF0F2'
 
 
 export default createMuiTheme({
@@ -14,12 +14,7 @@ export default createMuiTheme({
       disabledBackground: lightBlue,
       disabled: 'white',
       selected: blue
-    },
-    // background: {
-    //   paper: '#EEEEEE',
-    //   default: 'white'
-    // }
-
+    }
   },
   typography: {
     fontSize: 12,

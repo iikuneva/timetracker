@@ -1,4 +1,4 @@
-export default [
+ const cardsTasksData = [
     {
         name: 'SolarCity',
         tasks: [
@@ -29,3 +29,4 @@ export default [
     }
 ]
 
+export default cardsTasksData

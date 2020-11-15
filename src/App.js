@@ -24,8 +24,7 @@ function App() {
             component={UserHome}
           />
             <Route
-            exact
-            path='/project'
+            path='/project/:id'
             component={ProjectPM}
           />
           <Route
