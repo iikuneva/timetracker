@@ -26,7 +26,7 @@ const UserHome = (props) => {
                 alignItems='center'
                 spacing={4}
             >
-                <Grid item xs={12} style={{ paddingRight: 0, paddingBottom: 0 }}>
+                <Grid item xs={12}>
                     <Header />
                 </Grid>
                 <Grid item xs={12} container justify='center' alignItems='center'>

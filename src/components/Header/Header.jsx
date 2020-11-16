@@ -26,31 +26,34 @@ const Header = (props) => {
 
     const handleChange = (e, newValue) => {
         setValue(newValue)
-      }
+    }
 
     return (
-        <AppBar position="sticky">
-            <Toolbar>
-                <Button
-                    component={Link}
-                    to="/"
-                    className={classes.logoContainer}
-                >
-                    Tracker
+        <>
+            <AppBar position="fixed">
+                <Toolbar>
+                    <Button
+                        component={Link}
+                        to="/"
+                        className={classes.logoContainer}
+                    >
+                        Tracker
                 </Button>
-                <Tabs
-                    value={value}
-                    onChange={handleChange}
-                    className={classes.tabContainer}
-                    indicatorColor='primary'
-                >
-                    <Tab 
-                    icon={<PersonAccountIcon className={classes.icon}/>} 
-                    label='Sara Bareilles'
-                    />
-                </Tabs>
-            </Toolbar>
-        </AppBar>
+                    <Tabs
+                        value={value}
+                        onChange={handleChange}
+                        className={classes.tabContainer}
+                        indicatorColor='primary'
+                    >
+                        <Tab
+                            icon={<PersonAccountIcon className={classes.icon} />}
+                            label='Sara Bareilles'
+                        />
+                    </Tabs>
+                </Toolbar>
+            </AppBar>
+            <div className={classes.toolbarMargin} />
+        </>
     )
 }
 

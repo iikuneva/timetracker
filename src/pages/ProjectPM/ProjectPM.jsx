@@ -7,10 +7,11 @@ import {
     Grid,
     Tabs,
     Tab,
-    Paper,
     Box,
+    Paper,
     Card,
-    CardContent
+    CardContent,
+    AppBar
 } from '@material-ui/core'
 
 // Styles
@@ -26,7 +27,7 @@ import Header from '../../components/Header/Header'
 const Tasks = () => {
     let { id } = useParams()
     return (
-        <Box bgcolor='#F1F8FF' boxShadow={2} p={3} minHeight={200}>
+        <Box boxShadow={2} p={3} minHeight={200}>
             <Typography>{`Tasks for project id: ${id}`}</Typography>
         </Box>
     )
@@ -35,7 +36,7 @@ const Tasks = () => {
 const Participants = () => {
     let { id } = useParams()
     return (
-        <Box bgcolor='#F1F8FF' boxShadow={2} p={3} minHeight={200}>
+        <Box boxShadow={2} p={3} minHeight={200}>
             <Typography>{`Participants for project id: ${id}`}</Typography>
         </Box>
     )
@@ -44,7 +45,7 @@ const Participants = () => {
 const Reports = () => {
     let { id } = useParams()
     return (
-        <Box bgcolor='#F1F8FF' boxShadow={2} p={3} minHeight={200}>
+        <Box boxShadow={2} p={3} minHeight={200}>
             <Typography>{`Reports for project id: ${id}`}</Typography>
         </Box>
     )
@@ -70,8 +71,11 @@ const ProjectPM = (props) => {
                 alignItems='center'
                 className={classes.container}
                 spacing={3}
+
             >
-                <Header />
+                <Grid item xs={12}>
+                    <Header />
+                </Grid>
                 <Grid item xs={12}>
                     <Typography variant='h3'>
                         {project.name}
@@ -142,43 +146,47 @@ const ProjectPM = (props) => {
                     xs={12} md={8} lg={8}>
                     <Grid item xs={12}>
                         <Paper>
-                            <Tabs
-                                centered
-                                value={currentTab}
-                                indicatorColor='primary'
-                                textColor='primary'
-                            >
-                                <Tab label='Tasks'
-                                    component={Link}
-                                    to={`${match.url}/tasks`}
-                                    value='/project/:id/tasks'
-                                />
-                                <Tab label='Participants'
-                                    component={Link}
-                                    to={`${match.url}/participants`}
-                                    value='/project/:id/participants'
-                                />
-                                <Tab label='Reports'
-                                    component={Link}
-                                    to={`${match.url}/reports`}
-                                    value='/project/:id/reports'
-                                />
-                            </Tabs>
+                            <AppBar position="static">
+                                <Tabs
+                                    centered
+                                    value={currentTab}
+                                >
+                                    <Tab label='Tasks'
+                                        component={Link}
+                                        to={`${match.url}/tasks`}
+                                        value='/project/:id/tasks'
+                                        replace={true}
+                                    />
+                                    <Tab label='Participants'
+                                        component={Link}
+                                        to={`${match.url}/participants`}
+                                        value='/project/:id/participants'
+                                        replace={true}
+                                    />
+                                    <Tab label='Reports'
+                                        component={Link}
+                                        to={`${match.url}/reports`}
+                                        value='/project/:id/reports'
+                                        replace={true}
+                                    />
+                                </Tabs>
+                            </AppBar>
+
+                            <Switch>
+                                <Route exact
+                                    path={`${match.path}/tasks`}
+                                    component={Tasks} />
+                                <Route exact
+                                    path={`${match.path}`}
+                                    component={Tasks} />
+                                <Route exact
+                                    path={`${match.path}/participants`}
+                                    component={Participants} />
+                                <Route exact
+                                    path={`${match.path}/reports`}
+                                    component={Reports} />
+                            </Switch>
                         </Paper>
-                        <Switch>
-                            <Route exact
-                                path={`${match.path}/tasks`}
-                                component={Tasks} />
-                            <Route exact
-                                path={`${match.path}`}
-                                component={Tasks} />
-                            <Route exact
-                                path={`${match.path}/participants`}
-                                component={Participants} />
-                            <Route exact
-                                path={`${match.path}/reports`}
-                                component={Reports} />
-                        </Switch>
                     </Grid>
                 </Grid>
             </Grid>
