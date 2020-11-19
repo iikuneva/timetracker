@@ -54,8 +54,8 @@ const TaskDialog = (props) => {
             onClose={props.handleClose}
             aria-labelledby='responsive-dialog-title'
         >
-            <DialogTitle id='title' style={{ backgroundColor: '#FFBA60'}}>
-                <Typography align='center' style={{ fontSize: '1.2em', color: 'white'  }}>
+            <DialogTitle id='title' >
+                <Typography align='center' style={{ fontSize: '1.2em' }}>
                     {title}
                 </Typography>
             </DialogTitle>

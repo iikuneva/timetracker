@@ -23,24 +23,26 @@ import projectsData from '../../js/mock/mockProjectPM.js'
 
 // Custom components
 import Header from '../../components/Header/Header'
+import TasksTab from '../../components/TasksTab/TasksTab'
+import ParticipantsTab from '../../components/ParticipantsTab/ParticipantsTab'
 
-const Tasks = () => {
-    let { id } = useParams()
-    return (
-        <Box boxShadow={2} p={3} minHeight={200}>
-            <Typography>{`Tasks for project id: ${id}`}</Typography>
-        </Box>
-    )
-}
+// const Tasks = () => {
+//     let { id } = useParams()
+//     return (
+//         <Box boxShadow={2} p={3} minHeight={200}>
+//             <Typography>{`Tasks for project id: ${id}`}</Typography>
+//         </Box>
+//     )
+// }
 
-const Participants = () => {
-    let { id } = useParams()
-    return (
-        <Box boxShadow={2} p={3} minHeight={200}>
-            <Typography>{`Participants for project id: ${id}`}</Typography>
-        </Box>
-    )
-}
+// const Participants = () => {
+//     let { id } = useParams()
+//     return (
+//         <Box boxShadow={2} p={3} minHeight={200}>
+//             <Typography>{`Participants for project id: ${id}`}</Typography>
+//         </Box>
+//     )
+// }
 
 const Reports = () => {
     let { id } = useParams()
@@ -175,13 +177,13 @@ const ProjectPM = (props) => {
                             <Switch>
                                 <Route exact
                                     path={`${match.path}/tasks`}
-                                    component={Tasks} />
+                                    component={TasksTab} />
                                 <Route exact
                                     path={`${match.path}`}
-                                    component={Tasks} />
+                                    component={TasksTab} />
                                 <Route exact
                                     path={`${match.path}/participants`}
-                                    component={Participants} />
+                                    component={ParticipantsTab} />
                                 <Route exact
                                     path={`${match.path}/reports`}
                                     component={Reports} />

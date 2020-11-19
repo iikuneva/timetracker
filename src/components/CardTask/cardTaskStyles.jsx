@@ -2,6 +2,11 @@ const cardTaskStyles = (theme) => {
   return {
     card: {
       maxWidth: 345,
+      minHeight: 205,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
       boxShadow: theme.shadows[10],
       borderRadius: 10,
       [theme.breakpoints.down('sm')]: {
@@ -11,11 +16,14 @@ const cardTaskStyles = (theme) => {
       }
     },
     cardContent: {
-      minHeight: '70px'
+      maxHeight: '70px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     cardHeader: {
-      backgroundColor: '#FFBA60',
-      color: 'white'
+      paddingBottom: 0
     },
     tracked: {
       display: 'flex',

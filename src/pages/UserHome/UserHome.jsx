@@ -15,7 +15,7 @@ import {
 } from '@material-ui/core'
 
 // Mock Data
-import cardsTasksData from '../../js/mock/mockCardTaskData.js'
+import projectsData from '../../js/mock/mockProjectPM.js'
 
 const UserHome = (props) => {
 
@@ -38,16 +38,15 @@ const UserHome = (props) => {
                     justify='center'
                     xs={12}>
                     {
-                        cardsTasksData.map(project => {
+                        projectsData.map(project => {
                             return (
-                                <Project key={project.name} name={project.name} tasks={[...project.tasks]} />
+                                <Project key={project.projectId} name={project.name} tasks={[...project.tasks]} />
                             )
                         })
                     }
                 </Grid>
             </Grid>
         </>
-
 
     )
 

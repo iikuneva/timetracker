@@ -9,7 +9,6 @@ import {
   CardActions,
   CardContent,
   Typography,
-  Divider,
   Collapse
 } from '@material-ui/core'
 
@@ -46,11 +45,12 @@ const CardTask = (props) => {
       />
       <Card className={classes.card}>
         <CardHeader
-          title={title}
           className={classes.cardHeader}
+          title={title}
+          titleTypographyProps={{ variant: 'h6' }}
         />
         <CardContent className={classes.cardContent}>
-          <Typography>
+          <Typography align='center'>
             Assignee: {assignee}
           </Typography>
           <Typography>
@@ -60,7 +60,6 @@ const CardTask = (props) => {
             <TimerIcon className={classes.icon} />Tracked: {tracked}
           </Typography>
         </CardContent>
-        <Divider variant='middle' />
         <CardActions disableSpacing>
           <Button
             size='small'
@@ -73,7 +72,7 @@ const CardTask = (props) => {
             size='small'
             color='primary'
             onClick={() => {
-              
+
             }}
           >
             Track 8 hours
@@ -92,7 +91,7 @@ const CardTask = (props) => {
 
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography variant='h6'>Description</Typography>
+            <Typography variant='h6' align='center'>Description</Typography>
             <Typography variant='body2'>
               {description}
             </Typography>

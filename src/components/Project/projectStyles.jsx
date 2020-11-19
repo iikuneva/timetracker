@@ -2,7 +2,7 @@ const projectStyles = (theme) => {
     return {
         carouselContainer: {
             width: '100%',
-            padding: '2em',
+            padding: '1.5em',
             [theme.breakpoints.down("sm")] : {
                 padding: 0,
                 backgroundColor: 'none'

@@ -34,19 +34,8 @@ export default createMuiTheme({
       wrapper: {
         flexDirection: 'row',
         alignItems: 'center'
-      },
-    },
-    // MuiAutoComplete: {
-      // "root": {
-      //   "&$selected": {
-      //     "&[data-focus=\"true\"]": {
-      //       "backgroundColor": "transparent"
-      //     }
-      //   }
-      // }
-
-    // },
-
-  },
+      }
+    }
+  }
 
 })
