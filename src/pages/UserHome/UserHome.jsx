@@ -40,7 +40,10 @@ const UserHome = (props) => {
                     {
                         projectsData.map(project => {
                             return (
-                                <Project key={project.projectId} name={project.name} tasks={[...project.tasks]} />
+                                <Project key={project.projectId}
+                                    name={project.name}
+                                    projectId={project.projectId}
+                                    tasks={[...project.tasks]} />
                             )
                         })
                     }

@@ -78,10 +78,8 @@ const ProjectPM = (props) => {
                 <Grid item xs={12}>
                     <Header />
                 </Grid>
-                <Grid item xs={12}>
-                    <Typography variant='h3'>
-                        {project.name}
-                    </Typography>
+                <Grid item xs={12} className={classes.title}>
+                        {project.name.toUpperCase()}
                 </Grid>
 
                 <Grid item

@@ -7,6 +7,11 @@ const projectPMStyles = (theme) => {
         container: {
             backgroundColor: '#EDF0F2',
             minHeight: '100vh',
+        },
+        title: {
+            color: theme.palette.primary.main,
+            fontSize: '1.2em',
+            fontWeight: 'bold',
         }
     }
 }

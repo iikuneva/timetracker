@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 // Library react-multi-carousel https://www.npmjs.com/package/react-multi-carousel
 import Carousel from 'react-multi-carousel'
@@ -35,7 +36,7 @@ const responsive = {
 
 const Project = (props) => {
 
-    const { classes, name, tasks } = props
+    const { classes, name, projectId, tasks } = props
 
     return (
         <Grid
@@ -44,10 +45,13 @@ const Project = (props) => {
             justify="center"
             className={classes.container}
         >
-            <Grid item>
-                <Typography variant='h5' color='primary'>
-                    {name.toUpperCase()}
-                </Typography>
+            <Grid
+                item
+                component={Link}
+                to={`/project/${projectId}`}
+                className={classes.link}
+            >
+                {name.toUpperCase()}
             </Grid>
             <Carousel
                 className={classes.carouselContainer}

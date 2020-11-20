@@ -3,7 +3,7 @@ const projectStyles = (theme) => {
         carouselContainer: {
             width: '100%',
             padding: '1.5em',
-            [theme.breakpoints.down("sm")] : {
+            [theme.breakpoints.down("sm")]: {
                 padding: 0,
                 backgroundColor: 'none'
             }
@@ -14,10 +14,16 @@ const projectStyles = (theme) => {
             borderRadius: '10px',
             margin: '2em',
             padding: '1em 3em',
-            [theme.breakpoints.down("sm")] : {
+            [theme.breakpoints.down("sm")]: {
                 padding: 0,
                 backgroundColor: 'white'
             }
+        },
+        link: {
+            color: theme.palette.primary.main,
+            fontSize: '1.2em',
+            fontWeight: 'bold',
+            textDecoration: 'none'
         }
 
     }

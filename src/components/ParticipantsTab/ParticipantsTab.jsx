@@ -33,7 +33,7 @@ import participants from '../../js/mock/mockPartcipants.js'
 function Row (props) {
     const { participant } = props
     const [open, setOpen] = useState(false)
-    const [trackedTime, setTrackedTime] = useState(participant.tracked)
+    const [trackedInterval, setTrackedInterval] = useState('')
 
     return (
         <>
@@ -54,11 +54,11 @@ function Row (props) {
                     <FormControl>
                         <Select
                             style={{ minWidth: 100, fontSize: 12 }}
-                            id="trackedTime"
-                            value={trackedTime}
-                            onChange={(e) => setTrackedTime(e.target.value)}
+                            id="trackedInterval"
+                            value={trackedInterval}
+                            onChange={(e) => setTrackedInterval(e.target.value)}
                         >
-                            <MenuItem value={participant.tracked}>{participant.tracked}</MenuItem>
+                            <MenuItem value=''><em>None</em></MenuItem>
                             <MenuItem value='currentMonth'>Current month</MenuItem>
                             <MenuItem value='lastMonth'>Last month</MenuItem>
                             <MenuItem value='currentWeek'>Current Week</MenuItem>
@@ -66,6 +66,7 @@ function Row (props) {
                         </Select>
                     </FormControl>
                 </TableCell>
+                <TableCell align='center'>{participant.tracked}</TableCell>
             </TableRow>
             <TableRow>
                 <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={12}>
@@ -96,6 +97,7 @@ const ParticipantsTab = (props) => {
                         <TableCell align='center'>Role</TableCell>
                         <TableCell align='center'>Assigned Tasks</TableCell>
                         <TableCell align='center'>Completed Tasks</TableCell>
+                        <TableCell align='center'>Tracked Interval</TableCell>
                         <TableCell align='center'>Tracked Time</TableCell>
                     </TableRow>
                 </TableHead>
